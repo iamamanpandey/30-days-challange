@@ -10,7 +10,7 @@ function init() {
 }
 
 // init()
-// once functuon 
+// once functuon
 function once() {
   let done = false;
   return function display() {
@@ -31,3 +31,41 @@ function once() {
 // call();
 
 // privatization with closers
+
+const counter = (function () {
+  let privateCounter = 0;
+
+  function increment(val) {
+    privateCounter += val;
+  }
+  function decrement(val) {
+    privateCounter += val;
+  }
+  function value() {
+    return privateCounter;
+  }
+
+  return {
+    increment,
+    decrement,
+    value,
+  };
+})();
+
+counter.increment(5);
+
+counter.increment(10);
+console.log(counter.value());
+
+function a() {
+  for (var i = 0; i < 3; i++) {
+    inner(i);
+  }
+  function inner(x) {
+    setTimeout(function log() {
+      console.log(x);
+    }, x * 1000);
+  }
+}
+
+a();
