@@ -47,4 +47,11 @@ function reverseString(string) {
     }
 }
 
-console.log(rev("hello"), "sss");
+
+function recurse() {
+  // function code
+  recurse();
+  // function code
+}
+
+recurse();
