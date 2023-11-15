@@ -46,12 +46,3 @@ function reverseString(string) {
         return arr
     }
 }
-
-
-function recurse() {
-  // function code
-  recurse();
-  // function code
-}
-
-recurse();
