@@ -50,18 +50,9 @@ function* baz() {
 
 var z = baz();
 
-console.log(z.next());  
-console.log(z.next(1)); 
-console.log(z.next(2));
-
 function* yieldArrayElements() {
     yield 1;
     yield* [ 20, 30, 40 ];
 }
 
 let a = yieldArrayElements();
-
-console.log(a.next()); // { value: 1, done: false }
-console.log(a.next()); // { value: 20, done: false }
-console.log(a.next()); // { value: 30, done: false }
-console.log(a.next()); // { value: 40, done: false }
